@@ -1,0 +1,35 @@
+﻿@using TravelTrip.Models.Entity
+@model List<UberUns>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TravelLayout.cshtml";
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<body>
+
+    <div class="content">
+        <div class="wrap">
+            <div class="about">
+                <h3>Über Uns !</h3>
+                <img src="~/Bilder/maldives.jpg" alt=""/>
+                @foreach(var x in Model)
+			{
+             
+                <p>@x.Inhalt</p>
+			}
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+

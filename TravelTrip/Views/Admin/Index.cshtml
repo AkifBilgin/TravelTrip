@@ -1,0 +1,38 @@
+﻿@using TravelTrip.Models.Entity
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blogs</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Überschrift</th>
+        <th>Inhalt</th>
+        <th>Datum</th>
+        <th>Foto</th>
+        <th>Verwalten</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.Uberschrift</td>
+            <td>@x.Inhalt.Substring(0,220)</td>
+            <td>@x.Datum.ToShortDateString()</td>
+            <td>@x.BlogImage</td>
+            <td>
+                <a href="/Admin/BlogLoschen/@x.ID" class="btn btn-warning" style="width:120px; height:50px; margin-bottom:15px">Löschen</a>
+                <a href="/Admin/GetBlog/@x.ID" class="btn btn-success" style="width:120px; height:50px">Update</a>
+            </td> 
+        </tr>
+    }
+
+
+</table>
+
+<a href="/Admin/NeuerBlog" class="btn btn-primary">Blog Hinzufügen</a>

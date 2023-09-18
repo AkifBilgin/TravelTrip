@@ -1,0 +1,34 @@
+﻿@model TravelTrip.Models.Entity.Kommentar
+@{
+    ViewBag.Title = "GetComment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<br />
+@using (Html.BeginForm("UpdateComment", "Admin", FormMethod.Post))
+{ 
+<div>
+    <div>
+        @Html.LabelFor(x => x.ID)
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(x => x.User)
+        @Html.TextBoxFor(x => x.User, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(x => x.Email)
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(x => x.Komment)
+        @Html.TextBoxFor(x => x.Komment, new { @class = "form-control" })
+    </div>
+</div>
+<br />
+<button class="btn btn-primary">Kommentar Aktualisieren</button>
+}
+

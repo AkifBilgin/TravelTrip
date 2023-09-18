@@ -1,0 +1,16 @@
+﻿@using TravelTrip.Models.Entity
+@model List<Blog>
+
+<div class="padding">
+    <h4>Die letzten 10 Reisen</h4>
+    <ul class="list list-pad">
+        @{ int i = 1;}
+        @foreach (var x in Model)
+        {
+            <li class="list-bg"><span>@i   @{i++;}</span><a href="/Blog/Blogdetail/@x.ID">@x.Uberschrift</a></li>
+         
+        }
+     
+    </ul>
+    <a href="/Blog/Index" class="link1">Aller Reisen!</a>
+</div>

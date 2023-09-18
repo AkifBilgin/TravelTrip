@@ -1,0 +1,75 @@
+﻿@model  TravelTrip.Models.Entity.BlogComment
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TravelLayout.cshtml";
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+
+
+
+
+
+
+</head>
+<body>
+
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                @foreach (var x in Model.P1)
+                {
+                    <div class="single-grid">
+                        <img src="@x.BlogImage" height="700" alt="" style="margin-bottom:20px" />
+                        <a href="/Blog/BlogDetail/@x.ID">@x.Uberschrift</a>
+                        <p>
+                            @x.Inhalt
+                        </p>
+                    </div>
+                    <br /><br />
+                }
+            </div>
+
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h3>Die letzten Posts</h3>
+                    <ul>
+                        @foreach (var x in Model.P3)
+                        {
+
+
+                            <li><a href="/Blog/BlogDetail/@x.ID">@x.Uberschrift</a></li>
+                        }
+                    </ul>
+                </div>
+                <div class="comments">
+                    <h3>Die letzten Kommentare</h3>
+                    <ul>
+                        @foreach (var x in Model.P2)
+                        {
+
+
+                            <li><a href="/BLog/Blogdetail/@x.Blogid">@x.Komment</a></li>
+                        }
+                    
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</body>
+</html>
+<!---->

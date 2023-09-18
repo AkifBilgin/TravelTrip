@@ -1,0 +1,12 @@
+﻿@model TravelTrip.Models.Entity.Kommentar
+<div class="content-form">
+    <h3>Kommentieren</h3>
+    <form method="post">
+        <input  value="@ViewBag.result" name="Blogid" style="visibility:hidden"/>
+        @Html.TextBoxFor(x => x.User, new { @type = "text", @placeholder = "User Name" })
+        @Html.TextBoxFor(x => x.Email, new { @type = "text", @placeholder = "Email" })
+        @Html.TextAreaFor(x => x.Komment, new { @type = "text", @placeholder = "Kommentar" })
+        
+        <input type="submit" value="SENDEN" /> 
+    </form>
+</div>

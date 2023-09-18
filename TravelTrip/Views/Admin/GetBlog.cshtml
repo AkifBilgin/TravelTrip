@@ -1,0 +1,38 @@
+﻿@model TravelTrip.Models.Entity.Blog
+@{
+    ViewBag.Title = "GetBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("UpdateBlog", "Admin", FormMethod.Post))
+{
+
+    <div class="mb-3">
+        @Html.LabelFor(x => x.ID)
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @placeholder = "Titel", @readonly="readonly" })
+    </div>
+    <br />
+    <div class="mb-3">
+        @Html.LabelFor(x => x.Uberschrift)
+        @Html.TextBoxFor(x => x.Uberschrift, new { @class = "form-control", @placeholder = "Titel" })
+    </div>
+    <br />
+    <div class="mb-3">
+        @Html.LabelFor(x => x.Datum)
+        @Html.TextBoxFor(x => x.Datum, new { @class = "form-control", @placeholder = "TT.MM.YYYY" })
+    </div>
+    <br />
+    <div class="mb-3">
+        @Html.LabelFor(x => x.BlogImage)
+        @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control", @placeholder = "Link" })
+    </div>
+    <br />
+    <div class="mb-3">
+        @Html.LabelFor(x => x.Inhalt)
+        @Html.TextAreaFor(x => x.Inhalt,15,1, new { @class = "form-control", @placeholder = "Inhalt hie rein"})
+    </div>
+    <br />
+    <button class="btn btn-primary">Blog Aktualisieren</button>
+
+}

@@ -1,0 +1,12 @@
+﻿@using TravelTrip.Models.Entity
+@model List<Blog>
+@foreach (var x in Model)
+{
+    <div class="bot-img">
+       <a href="/Blog/BlogDetail/@x.ID"><img src="@x.BlogImage" alt=""style="width:150px; height:100px" /></a>
+    </div>
+    <div class="bot-desc1">
+        <p>@x.Inhalt.Substring(0, 100)...</p>
+    </div>
+    <div class="clear"></div>
+}
